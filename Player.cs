@@ -14,16 +14,9 @@ namespace RPSLS_C_Sharp
         //constructor
         public Player()
         {
-            this.wins = 0;
-            this.choice = "";
-            this.gestures.Add("rock");
-            this.gestures.Add("paper");
-            this.gestures.Add("scissors");
-            this.gestures.Add("lizard");
-            this.gestures.Add("spock");
+            
         }
 
         //member methods
-
     }
 }
