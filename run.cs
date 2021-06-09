@@ -36,7 +36,14 @@ namespace RPSLS_C_Sharp
             while (PlayerOne.wins < rounds_to_win && PlayerTwo.wins < rounds_to_win)
             {
                 this.PlayerOne.choice = PlayerOne.Make_choice(this.round, PlayerTwo.wins);
-                this.PlayerTwo.choice = PlayerTwo.Make_choice();
+                if (multiplayer == true)
+                {
+                    this.PlayerTwo.choice = PlayerTwo.Make_choice(this.round, PlayerOne.wins);
+                }
+                else
+                {
+                    this.PlayerTwo.choice = PlayerTwo.Make_choice();
+                }
                 Console.WriteLine(this.PlayerOne.choice);
             }
 
