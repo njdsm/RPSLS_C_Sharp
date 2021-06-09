@@ -22,7 +22,8 @@ namespace RPSLS_C_Sharp
         {
             Console.WriteLine("Game is Running!");
             bool multiplayer = this.multiplayer();
-            Console.WriteLine(multiplayer);
+            int rounds_to_win = this.rounds();
+
         }
 
         public bool multiplayer()
@@ -47,5 +48,24 @@ namespace RPSLS_C_Sharp
             }
         }
 
+        public int rounds()
+        {
+            try
+            {
+                Console.WriteLine("Enter a number for how many rounds to win\n:");
+                int number = Int32.Parse(Console.ReadLine());
+                if (number < 2)
+                {
+                    Console.WriteLine("Pick a number greater than 2 please.");
+                    return this.rounds();
+                }
+                return number;
+            }
+            catch
+            {
+                Console.WriteLine("Need a number.");
+                return this.rounds();
+            }
+        }
     }
 }
