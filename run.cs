@@ -7,14 +7,13 @@ namespace RPSLS_C_Sharp
     class Run
     {
         //Member Variables
-        //public class playerOne;
-        //computer = new Computer();
         public int round = 0;
 
         //Constructor
         public Run()
         {
-            Console.WriteLine("Hello");
+            Human PlayerOne = new Human("Player One");
+            Computer PlayerTwo = new Computer();
         }
 
         //Member Methods
