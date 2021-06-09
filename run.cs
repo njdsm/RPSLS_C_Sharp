@@ -8,20 +8,37 @@ namespace RPSLS_C_Sharp
     {
         //Member Variables
         public int round = 0;
+        Player PlayerOne;
+        Player PlayerTwo;
+
 
         //Constructor
         public Run()
         {
-            Human PlayerOne = new Human("Player One");
-            Computer PlayerTwo = new Computer();
+            
         }
 
         //Member Methods
         public void Run_game()
         {
+            this.PlayerOne = new Human("Player One");
             Console.WriteLine("Game is Running!");
             bool multiplayer = this.Multiplayer();
             int rounds_to_win = this.Rounds();
+            if (multiplayer == true)
+            {
+                this.PlayerTwo = new Human("Player Two");
+            }
+            else
+            {
+                this.PlayerTwo = new Computer();
+            }
+            while (PlayerOne.wins < rounds_to_win && PlayerTwo.wins < rounds_to_win)
+            {
+                this.PlayerOne.choice = PlayerOne.Make_choice(this.round, PlayerTwo.wins);
+                this.PlayerTwo.choice = PlayerTwo.Make_choice();
+                Console.WriteLine(this.PlayerOne.choice);
+            }
 
         }
 

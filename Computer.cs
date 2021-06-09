@@ -16,9 +16,9 @@ namespace RPSLS_C_Sharp
             this.choice = "";
         }
         //member methods
-        public string Make_choice()
+        public override string Make_choice()
         {
-            return "making choice";
+            return "making choice as computer";
         }
 
     }

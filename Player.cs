@@ -22,5 +22,14 @@ namespace RPSLS_C_Sharp
         }
 
         //member methods
+        public virtual string Make_choice()
+        {
+            return "";
+        }
+
+        public virtual string Make_choice(int round, int opponent_wins)
+        {
+            return "";
+        }
     }
 }
