@@ -9,7 +9,7 @@ namespace RPSLS_C_Sharp
         //Member Variables
         //public class playerOne;
         //computer = new Computer();
-        //int round = 0;
+        public int round = 0;
 
         //Constructor
         public Run()
@@ -21,6 +21,30 @@ namespace RPSLS_C_Sharp
         public void run_game()
         {
             Console.WriteLine("Game is Running!");
+            bool multiplayer = this.multiplayer();
+            Console.WriteLine(multiplayer);
+        }
+
+        public bool multiplayer()
+        {
+            Console.WriteLine(@"play against computer or play locally against a friend
+                                (must provide your own friend)\n
+                                1: Singleplayer\n
+                                2: Multiplayer\n:");
+            string user_input = Console.ReadLine();
+            if (user_input == "1")
+            {
+                return false;
+            }
+            else if (user_input == "2")
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Pick 1 or 2");
+                return this.multiplayer();
+            }
         }
 
     }
