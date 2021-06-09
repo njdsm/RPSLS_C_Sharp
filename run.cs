@@ -18,15 +18,15 @@ namespace RPSLS_C_Sharp
         }
 
         //Member Methods
-        public void run_game()
+        public void Run_game()
         {
             Console.WriteLine("Game is Running!");
-            bool multiplayer = this.multiplayer();
-            int rounds_to_win = this.rounds();
+            bool multiplayer = this.Multiplayer();
+            int rounds_to_win = this.Rounds();
 
         }
 
-        public bool multiplayer()
+        public bool Multiplayer()
         {
             Console.WriteLine(@"play against computer or play locally against a friend
                                 (must provide your own friend)\n
@@ -44,11 +44,11 @@ namespace RPSLS_C_Sharp
             else
             {
                 Console.WriteLine("Pick 1 or 2");
-                return this.multiplayer();
+                return this.Multiplayer();
             }
         }
 
-        public int rounds()
+        public int Rounds()
         {
             try
             {
@@ -57,14 +57,14 @@ namespace RPSLS_C_Sharp
                 if (number < 2)
                 {
                     Console.WriteLine("Pick a number greater than 2 please.");
-                    return this.rounds();
+                    return this.Rounds();
                 }
                 return number;
             }
             catch
             {
                 Console.WriteLine("Need a number.");
-                return this.rounds();
+                return this.Rounds();
             }
         }
     }

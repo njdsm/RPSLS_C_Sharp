@@ -11,7 +11,7 @@ namespace RPSLS_C_Sharp
             do
             {
                 Run game = new Run();
-                game.run_game();
+                game.Run_game();
                 Console.WriteLine("Would you like to play again? y/n");
                 string userInput = Console.ReadLine();
                 if(userInput != "y")
